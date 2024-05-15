@@ -9,6 +9,7 @@
   */
   $result = curl_exec($ch);
   $data = json_decode($result, true);
+  $name = "Asdrubal";
   
   curl_close($ch);
 
@@ -39,7 +40,10 @@
     <p>La Siguiente Pelicula es: <?= $data["following_production"]["title"]; ?></p>
   </hgroup>
 </main>
-    
+
+<footer>
+  <p>Creado por <?= $name ?> Con mucho amor</p>
+</footer>
 <style>
   :root {
     color-scheme: light dark;
@@ -48,6 +52,7 @@
   body {
     display: grid;
     place-content: center;
+    height: 100vh;
   }
 
   section {
@@ -60,6 +65,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+  }
+
+  footer {
     text-align: center;
   }
 
