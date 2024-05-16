@@ -41,6 +41,7 @@ $untilmessage = get_until_message($data["days_until"]);
     place-content: center;
     height: 100vh;
     overflow: hidden;
+    padding: 40px;
   }
 
   section {
