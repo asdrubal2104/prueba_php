@@ -1,20 +1,10 @@
 <?php
-require 'functions.php';
+require_once 'functions.php';
 
 $data = get_data(API_URL);
 $untilmessage = get_until_message($data["days_until"]);
 ?>
-<head>
-  <meta charset="UTF-8" />
-  <title>La próxima película de Marvel</title>  
-  <meta name="description" content="La próxima película de Marvel">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-  />
-</head>
-
+<?php require 'sections/head.php'; ?>
 
 <main>
   <section>
@@ -40,14 +30,14 @@ $untilmessage = get_until_message($data["days_until"]);
     display: grid;
     place-content: center;
     height: 100vh;
-    overflow: hidden;
-    padding: 40px;
+    padding: 20px;
   }
 
   section {
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 20px;
   }
 
   hgroup {
@@ -63,7 +53,7 @@ $untilmessage = get_until_message($data["days_until"]);
 
   img {
     margin: 0 auto;
-    height: 500px;
+    height: 50vh;
     width: auto;
   }
 </style>
