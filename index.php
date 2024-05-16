@@ -1,19 +1,9 @@
 <?php
-  const API_URL = "https://whenisthenextmcufilm.com/api";
-  # Inicializar una nueva sesión de cURL; cURL handle
-  $ch = curl_init(API_URL);
-  // Indicar que queremos recibir el resultado de la petición y no mostrarla en pantalla
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  /* Ejecutar la petición 
-      y guardar el contenido
-  */
-  $result = curl_exec($ch);
-  $data = json_decode($result, true);
-  $name = "Asdrubal";
-  
-  curl_close($ch);
+require 'functions.php';
 
- ?>
+$data = get_data(API_URL);
+$untilmessage = get_until_message($data["days_until"]);
+?>
 <head>
   <meta charset="UTF-8" />
   <title>La próxima película de Marvel</title>  
@@ -25,9 +15,6 @@
   />
 </head>
 
-  <pre style="font-size: 10px; overflow: scroll; height: 250px;">
-  <?php var_dump($data); ?>
-  </pre>
 
 <main>
   <section>
@@ -42,7 +29,7 @@
 </main>
 
 <footer>
-  <p>Creado por <?= $name ?> Con mucho amor</p>
+  <p>Creado por Asdrubal</p>
 </footer>
 <style>
   :root {
@@ -53,6 +40,7 @@
     display: grid;
     place-content: center;
     height: 100vh;
+    overflow: hidden;
   }
 
   section {
